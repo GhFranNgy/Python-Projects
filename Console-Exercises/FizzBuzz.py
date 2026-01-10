@@ -12,3 +12,5 @@ for i in range(1, runLength + 1):
         print("Buzz")
     else:
         print(i)
+
+input("Press Enter to exit...")
