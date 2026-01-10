@@ -45,7 +45,7 @@ def restart_or_close():
     
     #if no, close
     else:
-        print("======== Calculator closed. ========")
+        print("======= Calculator closed. ========")
 
 #=============================== GET TWO NUMBERS ===============================
 
@@ -58,7 +58,7 @@ def get_two_numbers():
 #================================= INPUT LOGIC =================================
 def InputLogic():
     if mode == 0:
-        print("======== Calculator closed. ========")
+        print("======= Calculator closed. ========")
 
     # Addition
     elif mode == 1:
