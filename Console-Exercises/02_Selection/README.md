@@ -13,3 +13,10 @@ This folder contains exercises focused on console input and output.
     > calculates zeros of a function
     > Outputs x1 and x2 of the zeros
 
+02_03_VolumeandArea
+    > Gets geometric solid type
+    > Checks if selection is valid
+    > Gets length values
+    > Calculates area and volume
+    > Outputs area and volume
+
