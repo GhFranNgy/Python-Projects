@@ -1,81 +1,101 @@
-# Console Exercises – Python
 
-This folder contains **console-based Python exercises** focused on building
-a strong foundation in programming.
+# =========================Console Exercises – Python===========================
+
+This folder contains **console-based Python exercises** designed to build a strong foundation in programming.
 
 The exercises are organized by topic and difficulty.
-Each subfolder contains small tasks or mini-projects that are solved
-using the terminal only.
+Each subfolder includes small tasks or mini-projects that are solved using the terminal only.
 
----
+================================================================================
 
-## 📁 Structure Overview
+## Folder Structure
 
 ### 01_InAndOutput/
-Introduction to Python:
-- get input
-- print output
 
----
+Basics of Python:
+
+* getting user input
+* printing output
+
+================================================================================
 
 ### 02_Selection/
-Exercises related to:
-- get input
-- select value
-- print output
 
----
+Working with:
+
+* user input
+* selecting values
+* printing results
+
+================================================================================
 
 ### 03_ForLoop/
-Practice with Loops:
-- For Loops
 
----
+Loop practice:
+
+* `for` loops
+
+================================================================================
 
 ### 04_WhileLoop/
-Practice with Loops:
-- While Loops
 
----
+Loop practice:
+
+* `while` loops
+
+================================================================================
 
 ### 05_StringOperations/
-Practice with String Operations:
-- Logic
 
----
+String-related exercises:
+
+* logic
+* string handling
+
+================================================================================
 
 ### 06_ModuloOperator/
-Practice with Modulo %:
-- calculations
-- Logic
 
----
+Using the modulo (`%`) operator:
+
+* calculations
+* logical conditions
+
+================================================================================
 
 ### 07_Arrays/
-Practice with Arrays:
-- Fill Arrays
-- Search in Arrays
-- output Array Value
 
----
+Array practice:
+
+* filling arrays
+* searching values
+* outputting array elements
+
+================================================================================
 
 ### 08_Methods/
-Practice with Methods:
-- Avoid messy code
 
----
+Working with methods:
 
-## 🎯 Learning Goal
+* keeping code clean
+* avoiding messy or repeated code
+
+================================================================================
+
+## Goal
 
 The goal of this folder is to:
-- improve problem-solving skills
-- understand Python syntax
-- build logical thinking
-- practice writing clean, readable code
 
-No graphical user interfaces are used on purpose.
+* improve problem-solving skills
+* understand Python syntax
+* develop logical thinking
+* practice writing clean and readable code
 
----
+All exercises are console-based on purpose.
+No graphical user interfaces are used.
 
-## 🧠 Note
-Some exercises are inspired by common beginner programming tasks.
+================================================================================
+
+## Note
+
+Some exercises are inspired by common beginner programming problems.
