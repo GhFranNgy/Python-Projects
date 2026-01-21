@@ -1,5 +1,5 @@
 
-# Console Exercises – Python
+# ===Console Exercises – Python===
 
 This folder contains **console-based Python exercises** designed to build a strong foundation in programming.
 
