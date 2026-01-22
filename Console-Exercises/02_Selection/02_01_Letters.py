@@ -17,3 +17,4 @@ else:
     cost = 1.00
 
 print(f"Price: {cost}$")
+input("Press anything to close")
