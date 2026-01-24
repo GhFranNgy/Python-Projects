@@ -1,4 +1,4 @@
-# 02 WHILE LOOP
+# 04 WHILE LOOP
 
 This folder contains exercises focused on basic Python while loops.
 
