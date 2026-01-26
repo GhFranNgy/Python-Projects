@@ -45,16 +45,7 @@ Loop practice:
 
 ================================================================================
 
-### 05_StringOperations/
-
-String-related exercises:
-
-* logic
-* string handling
-
-================================================================================
-
-### 06_ModuloOperator/
+### 05_ModuloOperator/
 
 Using the modulo (`%`) operator:
 
@@ -63,7 +54,7 @@ Using the modulo (`%`) operator:
 
 ================================================================================
 
-### 07_Arrays/
+### 06_Arrays/
 
 Array practice:
 
@@ -73,7 +64,7 @@ Array practice:
 
 ================================================================================
 
-### 08_Methods/
+### 07_Methods/
 
 Working with methods:
 
