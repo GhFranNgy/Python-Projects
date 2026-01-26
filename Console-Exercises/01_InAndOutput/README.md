@@ -28,3 +28,8 @@ This folder contains exercises focused on console input and output.
 01_05_Minimum
 * Gets 2 numbers
 * Outputs number with smaller value
+
+01_06_RemoveSpaces
+* Get user input
+* get result using replace() to replace Space with nothing
+* print result 
