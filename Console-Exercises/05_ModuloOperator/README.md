@@ -19,3 +19,11 @@ This folder contains exercises on the use of the modulo operator.
   - Remaining seconds
 * Display the results clearly
 * Display invalid input messages in color
+
+05_03_DigitSum
+* Prompt the user for a number
+* check if the input is valid
+* loop through the number 
+  - add last digit to result
+  - remove last digit
+* Display result
