@@ -12,7 +12,6 @@ while True:
     except ValueError:
         print(colorama.Fore.RED + "No valid input try again")
 
-    
 while num > 0: 
     digit_sum += num % 10
     num //= 10    
