@@ -12,7 +12,7 @@ for i in range(len(arr)):
         try:
             arr[i] = int(input(f"Enter your digit {i + 1}: "))
             break
-        
+
         except ValueError:
             print(colorama.Fore.RED + "Invalid input! Please enter a number.")
 
@@ -30,9 +30,7 @@ while True:
 for i in range(len(arr)):
 
     if arr[i] == searched_num:
-
         places_searched_num.append(i)
         counter_searched_num += 1
 
-print(f"The Searched Number appears {counter_searched_num} times at the places {places_searched_num + 1} of your list")
-
+print(f"The searched Number appears {counter_searched_num} times at the places {places_searched_num + 1} of your list")
