@@ -22,3 +22,39 @@ This folder contains exercises on the use of lists.
   - give every number a diffrent color
   - print indexes of columns and lines
 * Summarize results
+
+06_03_StudentScoreManager
+* Give user options:
+  - Add student
+  - Add score of a subject to student
+  - Show student average
+  - Show all students
+  - Exit
+* Add student
+  - Prompt for name
+  - Check for valid input (not empty)
+  - Assign unique ID
+  - Store student in list
+  - Initialize empty score dictionary for student
+* Add score of a subject to student
+  - Show available students
+  - Prompt for student ID
+  - Check for valid ID
+  - Prompt for subject
+  - Check for valid input
+  - Prompt for score (0–100)
+  - Check for valid input and range
+  - Append score to subject list
+* Show student average
+  - Show available students
+  - Prompt for student ID
+  - Check for valid ID
+  - Collect all subject scores
+  - Calculate average
+  - Print result (rounded to 2 decimals)
+  - If no scores → print message
+* Show all students
+  - Print ID
+  - Print name
+  - Print subjects and scores
+* Exit program
