@@ -58,3 +58,9 @@ This folder contains exercises on the use of lists.
   - Print name
   - Print subjects and scores
 * Exit program
+
+06_04_OnlyFrom0To25
+* Prompt user repeatedly for digits
+* only stop loop if user enters nothing
+* strip the list of negative or above 25 numbers
+* square remaining numbers and output
