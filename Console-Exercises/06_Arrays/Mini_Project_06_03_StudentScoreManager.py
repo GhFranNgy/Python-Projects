@@ -81,7 +81,7 @@ while True:
         while True:
             subject = input("Enter subject:\n").strip()
 
-            # ERROR check if input is empty
+            # ERROR check if input is empty 
             if not subject:
                 print("Subject cannot be empty.")
                 continue

@@ -64,3 +64,21 @@ This folder contains exercises on the use of lists.
 * only stop loop if user enters nothing
 * strip the list of negative or above 25 numbers
 * square remaining numbers and output
+
+06_05_ScoreAnalysis
+* Given predefined list of scores
+* Calculate total score
+  - loop through list
+  - sum values
+* Calculate average
+  - total / amount
+  - print result
+* Find lowest and highest
+  - compare each value
+  - update min and max
+  - print results
+* Sort scores (bubble sort)
+  - copy list
+  - nested loop
+  - swap if left > right
+  - print sorted list
