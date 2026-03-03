@@ -82,3 +82,21 @@ This folder contains exercises on the use of lists.
   - nested loop
   - swap if left > right
   - print sorted list
+
+06_06_FruitCounter
+* Initialize list of various fruits
+* Create a set of unique fruit types
+* Count occurrences of each fruit
+  - Initialize empty dictionary for counts
+  - Loop through list
+  - Increment count if fruit exists, otherwise initialize to 1
+* Identify the most frequent fruit
+  - Initialize variables for most common fruit and highest count
+  - Iterate through the dictionary
+  - Compare current count to highest recorded count
+  - Update highest count and most common fruit name
+* Output result
+  - Print original list
+  - Print unique fruit kinds
+  - Print the dictionary of counts
+  - Print the most common fruit found
