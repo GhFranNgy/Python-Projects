@@ -100,3 +100,11 @@ This folder contains exercises on the use of lists.
   - Print unique fruit kinds
   - Print the dictionary of counts
   - Print the most common fruit found
+
+06_07_OddorEven
+* Initialize list of numbers
+* loop trough list
+  - if number is even check if even array exists if not create new
+  - if number is odd check if odd array exists if not create new
+* Output sorted dict
+* RESTRICTION: use a dict, start with empty dict
