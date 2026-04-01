@@ -108,3 +108,13 @@ This folder contains exercises on the use of lists.
   - if number is odd check if odd array exists if not create new
 * Output sorted dict
 * RESTRICTION: use a dict, start with empty dict
+
+06_08_4DataStructures
+* Copy data into list with no duplicates
+* filter unique items with a set
+* store items in tuple
+* Count occurrences of each item
+  - Initialize empty dictionary
+  - Loop through original list
+    - If item exists in dictionary → increment count
+    - Else → initialize count to 1
