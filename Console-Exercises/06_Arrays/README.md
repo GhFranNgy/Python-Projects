@@ -116,5 +116,16 @@ This folder contains exercises on the use of lists.
 * Count occurrences of each item
   - Initialize empty dictionary
   - Loop through original list
-    - If item exists in dictionary → increment count
-    - Else → initialize count to 1
+    - If item exists in dictionary increment count
+    - Else initialize count to 1
+
+06_09_GroupByLength
+* Prompt user for a sentence. split into words
+* Strip spaces/punctuation from each word
+* Initialize empty dictionary
+* Loop through words:
+  - length = len(word)
+  - if length in dict append word
+  - else create new list with word
+* Convert each list to tuple
+* Print dictionary
