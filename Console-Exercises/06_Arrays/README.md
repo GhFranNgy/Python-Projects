@@ -129,3 +129,25 @@ This folder contains exercises on the use of lists.
   - else create new list with word
 * Convert each list to tuple
 * Print dictionary
+
+06_10_WordLengthTracker
+* Prompt user for a sentence
+  - Check for valid input
+* Split sentence into words
+  - Strip punctuation from each word
+* Initialize dictionaries
+  - group words by length
+  - count word occurrences
+* Loop through words
+  - If length exists then append word
+  - Else create new list with word
+  - If word exists then increment count
+  - Else initialize count to 1
+* Find most common word
+  - Initialize highest_count = 0
+  - Loop through occurence_Words
+  - If count > highest_count then update values
+* Output results
+  - Print most common word
+  - Print dictionary grouped by length
+  - Print dictionary of word counts
