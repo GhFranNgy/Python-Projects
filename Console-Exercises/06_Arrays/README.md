@@ -151,3 +151,27 @@ This folder contains exercises on the use of lists.
   - Print most common word
   - Print dictionary grouped by length
   - Print dictionary of word counts
+
+06_11_ListDrill
+* Initialisiere Liste von Zahlen
+* Slicing-Operationen
+  - Erste 4 Elemente ausgeben
+  - Letzte 3 Elemente ausgeben
+  - Liste umkehren
+* Durch Liste iterieren
+  - Gerade Zahlen filtern
+  - Summe der geraden Zahlen berechnen
+* List Comprehension
+  - Zahlen > 5 quadrieren
+  - Andere unverändert lassen
+* Liste verändern (Mutation)
+  - Bestimmten Wert entfernen
+  - Neuen Wert an bestimmter Position einfügen
+* Größte Zahl finden
+  - Mit erstem Element initialisieren
+  - Durch Liste iterieren und vergleichen
+  - Größten Wert aktualisieren
+* Liste anhand einer anderen Liste filtern
+  - Referenzliste erstellen
+  - Mit List Comprehension passende Werte übernehmen
+* Ergebnisse ausgeben
