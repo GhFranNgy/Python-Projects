@@ -116,7 +116,15 @@ def get_mode():
         "0. Close"
     )
     #Get user input
-    choice = input("Enter choice (1, 2, 3, 4, 5, 6) or 0 to close: ")
+    while True:
+        try:
+            choice = int(input("Enter choice (1, 2, 3, 4, 5, 6) or 0 to close: "))
+            if choice < 0 or choice > 6:
+                print("Please select number in range of 0 to 6")
+                continue
+            break
+        except ValueError:
+            print("Enter a valid number")
     return int(choice)
 
 # ================================ MAIN PROGRAM ================================
@@ -124,4 +132,4 @@ mode = get_mode()
 InputLogic()
 
 # Section Banner
-print("====================================")
+print("===================================")
