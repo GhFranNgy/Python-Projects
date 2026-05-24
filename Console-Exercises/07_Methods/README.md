@@ -46,3 +46,26 @@ This folder contains exercises on the use of methods.
   - Call mode selection
   - Call input logic
   - Print closing separator
+
+07_02_ShoppingCart
+* Initialize empty basket dictionary
+* Define functions
+  - add_item(name, amount, price) → calculate total and store in basket
+  - remove_item(name) → delete item if exists, else print error
+  - total() → sum all prices and print with 2 decimals
+  - items_count() → print length of basket
+  - show_cart() → loop through basket and display all items
+* Get shopping action
+  - Display menu (1-5)
+  - Loop until valid input (1-5)
+  - Handle ValueError for invalid input
+* Process action
+  - Action 1 → get item details and call add_item()
+  - Action 2 → get item name and call remove_item()
+  - Action 3 → call total()
+  - Action 4 → call items_count()
+  - Action 5 → call show_cart()
+* Main loop
+  - Get action selection
+  - Process based on selection
+  - Continue until user exits
