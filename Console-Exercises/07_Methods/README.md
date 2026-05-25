@@ -69,3 +69,26 @@ This folder contains exercises on the use of methods.
   - Get action selection
   - Process based on selection
   - Continue until user exits
+
+07_03_TodoList
+* Initialize empty todo dictionary
+* Define functions
+  - add_task(task) → set status to False and store in dictionary
+  - remove_task(task) → delete task if exists, else print error
+  - mark_done(task) → set status to True if exists, else print error
+  - show_all() → loop through all tasks and display with status
+  - show_pending() → loop through tasks and show only False (not done)
+* Get action selection
+  - Display menu (1-5)
+  - Loop until valid input (1-5)
+  - Handle ValueError for invalid input
+* Process action
+  - Action 1 → get task name and call add_task()
+  - Action 2 → get task name and call remove_task()
+  - Action 3 → get task name and call mark_done()
+  - Action 4 → call show_all()
+  - Action 5 → call show_pending()
+* Main loop
+  - Get action selection
+  - Process based on selection
+  - Continue until user exits
