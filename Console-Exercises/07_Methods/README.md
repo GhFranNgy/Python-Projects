@@ -92,3 +92,31 @@ This folder contains exercises on the use of methods.
   - Get action selection
   - Process based on selection
   - Continue until user exits
+
+07_04_TemperatureConverter
+* Initialize empty history dictionary and counter
+* Define conversion functions
+  - get_Fahrenheit(celsius) → calculate (c × 9/5) + 32 and store in history
+  - get_Celsius(fahrenheit) → calculate (f - 32) × 5/9 and store in history
+  - get_Kelvin(celsius) → calculate c + 273.15 and store in history
+* Store conversion in history
+  - store_in_history(temp, converted, method) → use global counter as key
+  - Add tuple to history dictionary
+  - Increment counter
+* Manage history
+  - show_history() → loop through history and print all conversions
+  - clear_history() → delete all history
+* Get action selection
+  - Display menu (1-5)
+  - Loop until valid input (1-5)
+  - Handle ValueError for invalid input
+* Process action
+  - Action 1 → get celsius and convert to fahrenheit
+  - Action 2 → get fahrenheit and convert to celsius
+  - Action 3 → get celsius and convert to kelvin
+  - Action 4 → call show_history()
+  - Action 5 → call clear_history()
+* Main loop
+  - Get action selection
+  - Process based on selection
+  - Continue until user exits
