@@ -120,3 +120,29 @@ This folder contains exercises on the use of methods.
   - Get action selection
   - Process based on selection
   - Continue until user exits
+
+  07_05_BankAccount
+* Create BankAccount class with __init__(name, balance)
+  - Initialize name, balance, empty transaction list
+* Define methods
+  - deposit(amount) → check if positive, add to balance, store transaction, return balance or False
+  - withdraw(amount) → check if positive and sufficient funds, subtract from balance, store transaction, return balance or False
+  - get_Balance() → return current balance
+  - get_Transactions() → loop through transactions and print each
+* Authentication
+  - Prompt for name and password
+  - If valid → create account and continue
+  - If invalid → deny access
+* Get action selection
+  - Display menu (1-4)
+  - Loop until valid input (1-4)
+  - Handle ValueError
+* Process action
+  - Action 1 → get amount and deposit, check return value
+  - Action 2 → get amount and withdraw, check return value
+  - Action 3 → show balance
+  - Action 4 → show all transactions
+* Main program
+  - Authenticate user
+  - Create account object
+  - Loop for continuous operations
