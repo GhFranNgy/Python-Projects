@@ -1,12 +1,5 @@
 import os
 
-script_dir = os.path.dirname(__file__)
-journal_folder = os.path.join(script_dir, "journal_data")
-
-os.makedirs(journal_folder, exist_ok=True)
-
-file_list = []
-file_list_path = []
 
 def load_existing_entries():
     if os.path.exists(journal_folder):
@@ -77,7 +70,16 @@ def handle_selection(selection):
         delete_entry(delete_Date)
 
 # main 
+script_dir = os.path.dirname(__file__)
+journal_folder = os.path.join(script_dir, "journal_data")
+
+os.makedirs(journal_folder, exist_ok=True)
+
+file_list = []
+file_list_path = []
+
 load_existing_entries()
+
 while True:
     try:
         selection = int(input("-----Select action-----\n" \
