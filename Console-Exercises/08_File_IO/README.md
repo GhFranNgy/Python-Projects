@@ -39,3 +39,31 @@ This folder contains exercises on reading and writing files.
 * Main loop
   - Get selection and process
   - Continue until exit
+
+08_02_Journal
+* Set up folder structure
+  - Create journal_data folder in script directory with os.makedirs()
+  - Initialize file_list and file_list_path to track entries
+* Load existing entries
+  - On startup, loop through journal_data folder
+  - Find all .txt files and add to tracking lists
+* Define journal functions
+  - write_entry(date, title, content) → create {date}.txt file with content
+  - read_journal() → loop through all entries and display
+  - search_entry(date) → find and display specific entry
+  - delete_entry(date) → confirm with user, remove file with os.remove()
+* Entry format
+  - Each entry is separate file: YYYY-MM-DD.txt
+  - Contains: title line, content line
+  - Use encoding='utf-8' for special characters
+* Get action selection
+  - Display menu (1-4)
+  - Handle ValueError
+* Process action
+  - Action 1 → write new entry
+  - Action 2 → read all entries
+  - Action 3 → search entry by date
+  - Action 4 → delete entry by date
+* Main loop
+  - Get selection and process
+  - Continue until exit
