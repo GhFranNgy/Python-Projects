@@ -67,3 +67,23 @@ This folder contains exercises on reading and writing files.
 * Main loop
   - Get selection and process
   - Continue until exit
+
+08_03_ServerLog
+* Set up file paths
+  - Use os.path to get script directory and create paths for server.log, info.txt, error.txt, warning.txt
+* Initialize counters
+  - info_counter, error_counter, warning_counter as global variables, starting at 0
+* Define read_file()
+  - Declare counters as global to modify them inside the function
+  - Open server.log and read all lines
+  - Loop through lines, check for "INFO", "ERROR", "WARNING"
+  - Increment matching counter and pass line to corresponding write function
+* Define write functions
+  - add_info_Msg(line) → append line to info.txt
+  - add_err_Msg(line) → append line to error.txt
+  - add_warn_Msg(line) → append line to warning.txt
+  - All use "a" mode so lines accumulate instead of overwriting
+* Define output()
+  - Print final counts for errors, infos, warnings
+* Main flow
+  - Call read_file() then output()
