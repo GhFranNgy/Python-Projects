@@ -87,3 +87,36 @@ This folder contains exercises on reading and writing files.
   - Print final counts for errors, infos, warnings
 * Main flow
   - Call read_file() then output()
+
+08_04_GradeBook
+* Set up file paths
+  - Use os.path to get script directory and create paths for grades.csv, report.csv
+* Initialize tracking lists
+  - grades → holds raw rows read from CSV
+  - valid_grades → holds rows that passed validation and have an Average
+* Define read_file()
+  - Open grades.csv with csv.DictReader
+  - Append each row to grades list
+  - Handle FileNotFoundError, quit() if file missing
+* Define get_average(grades)
+  - For each row, get subject keys (all except "Name")
+  - Convert subject values to int, catch ValueError for invalid entries
+  - Skip row on ValueError, print warning
+  - Calculate average = sum(values) / len(values), rounded to 2 decimals
+  - Add "Average" key to row, append to valid_grades
+* Define sort_after_average(grades)
+  - Bubble sort: nested loops compare neighboring rows
+  - Swap if left row's Average is smaller than right row's (descending order)
+* Define create_report(grades)
+  - Use csv.DictWriter with fixed fieldnames (Name, Math, English, Science, Average)
+  - Write header and all rows to report.csv
+* Define best_and_last(grades)
+  - Best student = first row after sorting (highest average)
+  - Last student = last row after sorting (lowest average)
+* Define class_average(grades)
+  - Average of all "Average" values across all students
+* Measure runtime
+  - Use time.perf_counter() before and after main flow
+  - Print total runtime at the end
+* Main flow
+  - read_file() → get_average() → sort_after_average() → create_report() → best_and_last() → class_average()
