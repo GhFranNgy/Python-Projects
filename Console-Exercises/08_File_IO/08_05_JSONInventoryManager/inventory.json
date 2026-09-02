@@ -1,0 +1,602 @@
+[
+  {
+    "id": 1,
+    "name": "Laptop Basic",
+    "quantity": 40,
+    "price": 667.0
+  },
+  {
+    "id": 2,
+    "name": "Laptop Pro",
+    "quantity": 47,
+    "price": 912.54
+  },
+  {
+    "id": 3,
+    "name": "Laptop Elite",
+    "quantity": 14,
+    "price": 709.31
+  },
+  {
+    "id": 4,
+    "name": "Laptop Mini",
+    "quantity": 6,
+    "price": 1515.05
+  },
+  {
+    "id": 5,
+    "name": "Laptop Max",
+    "quantity": 57,
+    "price": 1318.05
+  },
+  {
+    "id": 6,
+    "name": "Mouse Basic",
+    "quantity": 37,
+    "price": 26.88
+  },
+  {
+    "id": 7,
+    "name": "Mouse Pro",
+    "quantity": 1,
+    "price": 13.75
+  },
+  {
+    "id": 8,
+    "name": "Mouse Elite",
+    "quantity": 14,
+    "price": 30.21
+  },
+  {
+    "id": 9,
+    "name": "Mouse Mini",
+    "quantity": 1,
+    "price": 32.45
+  },
+  {
+    "id": 10,
+    "name": "Mouse Max",
+    "quantity": 45,
+    "price": 36.0
+  },
+  {
+    "id": 11,
+    "name": "Keyboard Basic",
+    "quantity": 34,
+    "price": 74.54
+  },
+  {
+    "id": 12,
+    "name": "Keyboard Pro",
+    "quantity": 28,
+    "price": 96.6
+  },
+  {
+    "id": 13,
+    "name": "Keyboard Elite",
+    "quantity": 51,
+    "price": 133.01
+  },
+  {
+    "id": 14,
+    "name": "Keyboard Mini",
+    "quantity": 48,
+    "price": 124.76
+  },
+  {
+    "id": 15,
+    "name": "Keyboard Max",
+    "quantity": 44,
+    "price": 74.94
+  },
+  {
+    "id": 16,
+    "name": "Monitor Basic",
+    "quantity": 17,
+    "price": 177.74
+  },
+  {
+    "id": 17,
+    "name": "Monitor Pro",
+    "quantity": 48,
+    "price": 268.3
+  },
+  {
+    "id": 18,
+    "name": "Monitor Elite",
+    "quantity": 5,
+    "price": 289.96
+  },
+  {
+    "id": 19,
+    "name": "Monitor Mini",
+    "quantity": 22,
+    "price": 523.75
+  },
+  {
+    "id": 20,
+    "name": "Monitor Max",
+    "quantity": 38,
+    "price": 232.26
+  },
+  {
+    "id": 21,
+    "name": "Webcam Basic",
+    "quantity": 2,
+    "price": 94.32
+  },
+  {
+    "id": 22,
+    "name": "Webcam Pro",
+    "quantity": 34,
+    "price": 36.86
+  },
+  {
+    "id": 23,
+    "name": "Webcam Elite",
+    "quantity": 59,
+    "price": 60.96
+  },
+  {
+    "id": 24,
+    "name": "Webcam Mini",
+    "quantity": 35,
+    "price": 52.85
+  },
+  {
+    "id": 25,
+    "name": "Webcam Max",
+    "quantity": 40,
+    "price": 83.76
+  },
+  {
+    "id": 26,
+    "name": "Headset Basic",
+    "quantity": 55,
+    "price": 81.9
+  },
+  {
+    "id": 27,
+    "name": "Headset Pro",
+    "quantity": 12,
+    "price": 145.35
+  },
+  {
+    "id": 28,
+    "name": "Headset Elite",
+    "quantity": 2,
+    "price": 137.33
+  },
+  {
+    "id": 29,
+    "name": "Headset Mini",
+    "quantity": 49,
+    "price": 68.54
+  },
+  {
+    "id": 30,
+    "name": "Headset Max",
+    "quantity": 5,
+    "price": 173.23
+  },
+  {
+    "id": 31,
+    "name": "USB Cable Basic",
+    "quantity": 55,
+    "price": 4.72
+  },
+  {
+    "id": 32,
+    "name": "USB Cable Pro",
+    "quantity": 17,
+    "price": 10.71
+  },
+  {
+    "id": 33,
+    "name": "USB Cable Elite",
+    "quantity": 53,
+    "price": 9.2
+  },
+  {
+    "id": 34,
+    "name": "USB Cable Mini",
+    "quantity": 23,
+    "price": 9.04
+  },
+  {
+    "id": 35,
+    "name": "USB Cable Max",
+    "quantity": 42,
+    "price": 7.54
+  },
+  {
+    "id": 36,
+    "name": "External SSD Basic",
+    "quantity": 59,
+    "price": 220.89
+  },
+  {
+    "id": 37,
+    "name": "External SSD Pro",
+    "quantity": 4,
+    "price": 202.28
+  },
+  {
+    "id": 38,
+    "name": "External SSD Elite",
+    "quantity": 10,
+    "price": 183.53
+  },
+  {
+    "id": 39,
+    "name": "External SSD Mini",
+    "quantity": 15,
+    "price": 90.85
+  },
+  {
+    "id": 40,
+    "name": "External SSD Max",
+    "quantity": 24,
+    "price": 117.49
+  },
+  {
+    "id": 41,
+    "name": "Router Basic",
+    "quantity": 59,
+    "price": 170.8
+  },
+  {
+    "id": 42,
+    "name": "Router Pro",
+    "quantity": 35,
+    "price": 78.32
+  },
+  {
+    "id": 43,
+    "name": "Router Elite",
+    "quantity": 20,
+    "price": 215.43
+  },
+  {
+    "id": 44,
+    "name": "Router Mini",
+    "quantity": 49,
+    "price": 42.31
+  },
+  {
+    "id": 45,
+    "name": "Router Max",
+    "quantity": 52,
+    "price": 37.06
+  },
+  {
+    "id": 46,
+    "name": "Printer Basic",
+    "quantity": 20,
+    "price": 248.49
+  },
+  {
+    "id": 47,
+    "name": "Printer Pro",
+    "quantity": 4,
+    "price": 168.61
+  },
+  {
+    "id": 48,
+    "name": "Printer Elite",
+    "quantity": 60,
+    "price": 318.22
+  },
+  {
+    "id": 49,
+    "name": "Printer Mini",
+    "quantity": 45,
+    "price": 212.16
+  },
+  {
+    "id": 50,
+    "name": "Printer Max",
+    "quantity": 41,
+    "price": 289.68
+  },
+  {
+    "id": 51,
+    "name": "Desk Lamp Basic",
+    "quantity": 56,
+    "price": 55.73
+  },
+  {
+    "id": 52,
+    "name": "Desk Lamp Pro",
+    "quantity": 29,
+    "price": 17.14
+  },
+  {
+    "id": 53,
+    "name": "Desk Lamp Elite",
+    "quantity": 8,
+    "price": 22.33
+  },
+  {
+    "id": 54,
+    "name": "Desk Lamp Mini",
+    "quantity": 35,
+    "price": 36.95
+  },
+  {
+    "id": 55,
+    "name": "Desk Lamp Max",
+    "quantity": 47,
+    "price": 39.23
+  },
+  {
+    "id": 56,
+    "name": "Office Chair Basic",
+    "quantity": 57,
+    "price": 258.4
+  },
+  {
+    "id": 57,
+    "name": "Office Chair Pro",
+    "quantity": 23,
+    "price": 134.57
+  },
+  {
+    "id": 58,
+    "name": "Office Chair Elite",
+    "quantity": 8,
+    "price": 233.24
+  },
+  {
+    "id": 59,
+    "name": "Office Chair Mini",
+    "quantity": 5,
+    "price": 316.97
+  },
+  {
+    "id": 60,
+    "name": "Office Chair Max",
+    "quantity": 55,
+    "price": 97.28
+  },
+  {
+    "id": 61,
+    "name": "Notebook Basic",
+    "quantity": 40,
+    "price": 4.08
+  },
+  {
+    "id": 62,
+    "name": "Notebook Pro",
+    "quantity": 43,
+    "price": 7.49
+  },
+  {
+    "id": 63,
+    "name": "Notebook Elite",
+    "quantity": 4,
+    "price": 7.0
+  },
+  {
+    "id": 64,
+    "name": "Notebook Mini",
+    "quantity": 38,
+    "price": 14.95
+  },
+  {
+    "id": 65,
+    "name": "Notebook Max",
+    "quantity": 33,
+    "price": 5.27
+  },
+  {
+    "id": 66,
+    "name": "Pen Set Basic",
+    "quantity": 35,
+    "price": 21.94
+  },
+  {
+    "id": 67,
+    "name": "Pen Set Pro",
+    "quantity": 0,
+    "price": 17.97
+  },
+  {
+    "id": 68,
+    "name": "Pen Set Elite",
+    "quantity": 7,
+    "price": 18.0
+  },
+  {
+    "id": 69,
+    "name": "Pen Set Mini",
+    "quantity": 34,
+    "price": 19.52
+  },
+  {
+    "id": 70,
+    "name": "Pen Set Max",
+    "quantity": 49,
+    "price": 17.1
+  },
+  {
+    "id": 71,
+    "name": "Whiteboard Basic",
+    "quantity": 7,
+    "price": 58.16
+  },
+  {
+    "id": 72,
+    "name": "Whiteboard Pro",
+    "quantity": 10,
+    "price": 78.98
+  },
+  {
+    "id": 73,
+    "name": "Whiteboard Elite",
+    "quantity": 46,
+    "price": 133.86
+  },
+  {
+    "id": 74,
+    "name": "Whiteboard Mini",
+    "quantity": 16,
+    "price": 146.35
+  },
+  {
+    "id": 75,
+    "name": "Whiteboard Max",
+    "quantity": 48,
+    "price": 43.22
+  },
+  {
+    "id": 76,
+    "name": "Backpack Basic",
+    "quantity": 58,
+    "price": 28.51
+  },
+  {
+    "id": 77,
+    "name": "Backpack Pro",
+    "quantity": 40,
+    "price": 43.88
+  },
+  {
+    "id": 78,
+    "name": "Backpack Elite",
+    "quantity": 40,
+    "price": 60.61
+  },
+  {
+    "id": 79,
+    "name": "Backpack Mini",
+    "quantity": 12,
+    "price": 32.23
+  },
+  {
+    "id": 80,
+    "name": "Backpack Max",
+    "quantity": 48,
+    "price": 32.92
+  },
+  {
+    "id": 81,
+    "name": "Power Bank Basic",
+    "quantity": 49,
+    "price": 74.96
+  },
+  {
+    "id": 82,
+    "name": "Power Bank Pro",
+    "quantity": 58,
+    "price": 15.04
+  },
+  {
+    "id": 83,
+    "name": "Power Bank Elite",
+    "quantity": 20,
+    "price": 46.76
+  },
+  {
+    "id": 84,
+    "name": "Power Bank Mini",
+    "quantity": 7,
+    "price": 75.39
+  },
+  {
+    "id": 85,
+    "name": "Power Bank Max",
+    "quantity": 56,
+    "price": 79.05
+  },
+  {
+    "id": 86,
+    "name": "Charger Basic",
+    "quantity": 51,
+    "price": 19.23
+  },
+  {
+    "id": 87,
+    "name": "Charger Pro",
+    "quantity": 3,
+    "price": 17.23
+  },
+  {
+    "id": 88,
+    "name": "Charger Elite",
+    "quantity": 36,
+    "price": 38.41
+  },
+  {
+    "id": 89,
+    "name": "Charger Mini",
+    "quantity": 5,
+    "price": 31.96
+  },
+  {
+    "id": 90,
+    "name": "Charger Max",
+    "quantity": 52,
+    "price": 12.08
+  },
+  {
+    "id": 91,
+    "name": "Speaker Basic",
+    "quantity": 48,
+    "price": 169.16
+  },
+  {
+    "id": 92,
+    "name": "Speaker Pro",
+    "quantity": 8,
+    "price": 55.95
+  },
+  {
+    "id": 93,
+    "name": "Speaker Elite",
+    "quantity": 30,
+    "price": 285.12
+  },
+  {
+    "id": 94,
+    "name": "Speaker Mini",
+    "quantity": 10,
+    "price": 94.22
+  },
+  {
+    "id": 95,
+    "name": "Speaker Max",
+    "quantity": 55,
+    "price": 189.85
+  },
+  {
+    "id": 96,
+    "name": "Microphone Basic",
+    "quantity": 13,
+    "price": 326.9
+  },
+  {
+    "id": 97,
+    "name": "Microphone Pro",
+    "quantity": 48,
+    "price": 262.23
+  },
+  {
+    "id": 98,
+    "name": "Microphone Elite",
+    "quantity": 12,
+    "price": 256.71
+  },
+  {
+    "id": 99,
+    "name": "Microphone Mini",
+    "quantity": 25,
+    "price": 348.42
+  },
+  {
+    "id": 100,
+    "name": "Microphone Max",
+    "quantity": 41,
+    "price": 146.36
+  }
+]
