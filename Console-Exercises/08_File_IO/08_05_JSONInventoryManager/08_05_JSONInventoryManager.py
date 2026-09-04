@@ -33,6 +33,7 @@ def save_inventory(items):
         json.dump(items, f, indent=2)
     print("Done.")
 
+
 def get_next_id(inventory):
     if not inventory:
         return 1
@@ -67,6 +68,7 @@ def add_item(inventory, name, quantity, price):
     save_inventory(inventory)
     print(f"Added {name} (id={item['id']}, {quantity} @ {price}).")
 
+
 def remove_item(inventory, name, quantity):
     try:
         if quantity != "all":
@@ -92,8 +94,22 @@ def remove_item(inventory, name, quantity):
 
 
 def update_price(inventory, name, price):
+    for item in inventory:
+        if item["name"] == name:
+            try:
+                price = float(price)
+            except ValueError:
+                print("Price must be a number.")
+                return
+            item["price"] = price
+            print(f"Updated {name} (id={item['id']}, {item['quantity']} @ {price}).")
+            save_inventory(inventory)
+            return
 
 def find_low_stock(inventory, treshold):
+    for item in inventory:
+        if item["quantity"] < treshold:
+            print(f"{item['name']} (id={item['id']}, {item['quantity']} @ {item['price']})")
 
 def handle_selection(selection):
 

@@ -120,3 +120,35 @@ This folder contains exercises on reading and writing files.
   - Print total runtime at the end
 * Main flow
   - read_file() → get_average() → sort_after_average() → create_report() → best_and_last() → class_average()
+
+08_05_JSONInventoryManager
+* Set up file paths
+  - Use os.path to get script directory and create inventory.json path
+* Load/save inventory
+  - load_inventory(inventory) → read JSON, handle FileNotFoundError and JSONDecodeError with sys.exit()
+  - save_inventory(items) → write JSON with json.dump(), indent=2
+* Define get_next_id(inventory)
+  - Return 1 if inventory is empty
+  - Otherwise find max existing id and add 1
+* Define add_item(inventory, name, quantity, price)
+  - Convert quantity/price to int/float, catch ValueError
+  - Check if item with same name exists → add to quantity instead of duplicating
+  - Otherwise create new item dict with id, name, quantity, price
+  - Save inventory after change
+* Define remove_item(inventory, name, quantity)
+  - Accept quantity as number or "all"
+  - Find item by name, reduce or zero out quantity
+  - Handle insufficient stock and item-not-found cases
+  - Save inventory after change
+* Define update_price(inventory, name, price)
+  - Find item by name, convert price to float, catch ValueError
+  - Update price, save inventory
+* Define find_low_stock(inventory, threshold)
+  - Loop through inventory, print items where quantity < threshold
+* Define handle_selection(selection)
+  - Route menu choice to add/remove/update_price/find_low_stock
+  - Prompt for required inputs via input()
+* Main loop
+  - Load and save inventory once at start
+  - Display menu, validate input with try/except ValueError
+  - Loop until program exit
