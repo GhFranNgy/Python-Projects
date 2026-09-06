@@ -1,0 +1,98 @@
+import csv
+import json
+import os
+import sys
+
+library_path = os.path.join(os.path.dirname(__file__), "library.json")
+export_path = os.path.join(os.path.dirname(__file__), "export.csv")
+reading_log = os.path.join(os.path.dirname(__file__), "reading_log.txt")
+
+library = {}
+
+def load_library(library):
+    print("Load Library...")
+    try:
+        with open(library_path, "r") as f:
+            library = json.load(f)
+    except FileNotFoundError:
+        print(f"Error: {library_path} nicht gefunden.")
+        sys.exit()
+    except json.JSONDecodeError:
+        print("Missing or damaged file.")
+        sys.exit()
+        
+    return library
+
+def save_library(library):
+    print("Save Library...")
+    with open(library_path, "w") as f:
+        json.dump(library, f, indent=2)
+
+def add_book(library, title, author, pages, status):
+
+def update_status(library, title, status):
+
+def remove_book(library, title):
+
+def show_stats(library):
+
+def export_csv(library):
+
+def handle_selection(selection):
+
+    if selection == 1:
+        print("-----Add Book-----")
+        title = input("Title: ")
+        author = input("Author: ")
+        pages = input("Pages: ")
+        status = input("Status:")
+
+        add_book(library, title, author, pages, status)
+
+    elif selection == 2:
+        print("-----Update Status-----")
+        title = input("Title: ")
+        status = input("Status: ")
+
+        update_status(library, title, status)
+
+    elif selection == 3:
+        print("-----Remove Book-----")
+        title = input("Title: ")
+
+        remove_book(library, title)
+
+    elif selection == 4:
+        print("-----Show Stats-----")
+        show_stats(library)
+
+    elif selection == 5:
+        print("-----Export CSV-----")
+        export_csv(library)
+
+    elif selection == 6:
+        print("-----Exit-----")
+        sys.exit()
+
+    else:
+        print("Invalid selection")
+
+# main
+while True:
+    try:
+        selection = int(input("-----Select action-----\n" \
+            "(1) Add Book\n" \
+            "(2) Update Status\n" \
+            "(3) Remove Book\n" \
+            "(4) Search Book\n" \
+            "(5) Show Stats\n" \
+            "(6) Export CSV\n" \
+            "(7) Exit\n"))
+
+        if selection in range(1,8):
+            handle_selection(selection)
+        else:
+            print("Please enter a number in range of 1-7")
+
+    except(ValueError):
+        print("Please enter a valid number")
