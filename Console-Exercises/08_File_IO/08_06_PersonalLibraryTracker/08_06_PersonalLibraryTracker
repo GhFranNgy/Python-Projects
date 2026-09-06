@@ -7,7 +7,7 @@ library_path = os.path.join(os.path.dirname(__file__), "library.json")
 export_path = os.path.join(os.path.dirname(__file__), "export.csv")
 reading_log = os.path.join(os.path.dirname(__file__), "reading_log.txt")
 
-library = {}
+library = []
 
 def load_library(library):
     print("Load Library...")
@@ -28,16 +28,57 @@ def save_library(library):
     with open(library_path, "w") as f:
         json.dump(library, f, indent=2)
 
-def add_book(library, title, author, pages, status):
+def get_next_id(library):
+    if not library:
+        return 1
+    return max(book["id"] for book in library) + 1 # pulls out largest ID and adds 1
 
-def update_status(library, title, status):
+def add_book(library, title, author, pages, status):
+    for book in library:
+        if book["title"] == title and book["author"] == author:
+            print("Book already exists in library.")
+            break
+    else:
+        try:
+            pages = int(pages)
+        except ValueError:
+            print("Pages must be a whole number.")
+            return
+
+        book = {
+            "id": get_next_id(library),
+            "title": title,
+            "author": author,
+            "pages": pages,
+            "status": status
+        }
+        library.append(book)
+        save_library(library)
+        print(f"Book '{title}' by {author} added to library.")
+
+def update_status(library, title):
+    for book in library:
+        if title == book["title"]:
+            check_author = input(f"{title} by {book["author"]}? y/N\n")
+            if check_author.lower() == "y":
+                status = input("Status: ")
+                book["status"] = status
+            elif check_author.lower() == "n":
+                print("Wrong Book. Exiting...")
+            else:
+                print("Selection not valid")
+            break
+    else:
+        print("Book not found.")
 
 def remove_book(library, title):
-
+    pass
+def search_book(library, title):
+    pass
 def show_stats(library):
-
+    pass
 def export_csv(library):
-
+    pass
 def handle_selection(selection):
 
     if selection == 1:
@@ -52,9 +93,8 @@ def handle_selection(selection):
     elif selection == 2:
         print("-----Update Status-----")
         title = input("Title: ")
-        status = input("Status: ")
 
-        update_status(library, title, status)
+        update_status(library, title)
 
     elif selection == 3:
         print("-----Remove Book-----")
@@ -63,21 +103,28 @@ def handle_selection(selection):
         remove_book(library, title)
 
     elif selection == 4:
+        print("-----Search Book-----")
+        title = input("Title: ")
+
+        remove_book(library, title)
+
+    elif selection == 5:
         print("-----Show Stats-----")
         show_stats(library)
 
-    elif selection == 5:
+    elif selection == 6:
         print("-----Export CSV-----")
         export_csv(library)
 
-    elif selection == 6:
+    elif selection == 7:
         print("-----Exit-----")
         sys.exit()
 
     else:
         print("Invalid selection")
 
-# main
+# main 
+library = load_library(library)
 while True:
     try:
         selection = int(input("-----Select action-----\n" \
