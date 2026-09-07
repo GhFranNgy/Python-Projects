@@ -72,7 +72,45 @@ def update_status(library, title):
         print("Book not found.")
 
 def remove_book(library, title):
-    pass
+    matches = [book for book in library if book["title"] == title]
+
+    if not matches:
+        print("Book not found")
+        return
+
+    for book in matches:
+        print(book)
+
+    check_book = input("Is correct book shown? y/N\n")
+    if check_book.lower() == "y":
+        try:
+            book_id = int(input("Select Book ID to delete: "))
+        except ValueError:
+            print("ID must be a whole number")
+            return
+    elif check_book.lower() == "n":
+        print("Wrong book. Exiting...")
+        return
+    else:
+        print("Selection not valid")
+        return
+
+    for book in library:
+        if book_id == book["id"]:
+            confirm = input(f"Type the title to confirm deletion of '{book['title']}': ")
+            if confirm == book["title"]:
+                library.remove(book)
+                save_library(library)
+                with open(reading_log, "a") as f:
+                    from datetime import datetime
+                    f.write(f"{datetime.now()}: Removed '{book['title']}'\n")
+                print(f"Removed '{book['title']}'.")
+            else:
+                print("Title didn't match, deletion cancelled.")
+            return
+
+    print("No book found with that ID.")
+    
 def search_book(library, title):
     pass
 def show_stats(library):
