@@ -1,0 +1,429 @@
+[
+  {
+    "id": 1,
+    "title": "Hamlet",
+    "author": "Nicolai Gogol",
+    "pages": 419,
+    "status": "unread"
+  },
+  {
+    "id": 2,
+    "title": "Dracula",
+    "author": "J. Sheridan Le Fanu",
+    "pages": 622,
+    "status": "finished"
+  },
+  {
+    "id": 3,
+    "title": "The Metamorphosis",
+    "author": "Franz Kafka",
+    "pages": 201,
+    "status": "unread"
+  },
+  {
+    "id": 4,
+    "title": "Animal Farm",
+    "author": "George Orwell",
+    "pages": 112,
+    "status": "reading"
+  },
+  {
+    "id": 5,
+    "title": "Jane Eyre",
+    "author": "Charlotte Bronte",
+    "pages": 507,
+    "status": "reading"
+  },
+  {
+    "id": 6,
+    "title": "Neuromancer",
+    "author": "William Gibson",
+    "pages": 271,
+    "status": "reading"
+  },
+  {
+    "id": 7,
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "pages": 310,
+    "status": "finished"
+  },
+  {
+    "id": 8,
+    "title": "Frankenstein",
+    "author": "Eileen Rendahl",
+    "pages": 291,
+    "status": "finished"
+  },
+  {
+    "id": 9,
+    "title": "No Country for Old Men",
+    "author": "Cormac McCarthy",
+    "pages": 309,
+    "status": "unread"
+  },
+  {
+    "id": 10,
+    "title": "American Gods",
+    "author": "Neil Gaiman",
+    "pages": 465,
+    "status": "reading"
+  },
+  {
+    "id": 11,
+    "title": "Project Hail Mary",
+    "author": "Andy Weir",
+    "pages": 496,
+    "status": "unread"
+  },
+  {
+    "id": 12,
+    "title": "Wuthering Heights",
+    "author": "Emily Bronte",
+    "pages": 342,
+    "status": "finished"
+  },
+  {
+    "id": 13,
+    "title": "Blood Meridian",
+    "author": "Cormac McCarthy",
+    "pages": 337,
+    "status": "reading"
+  },
+  {
+    "id": 14,
+    "title": "The Odyssey",
+    "author": "Homer",
+    "pages": 485,
+    "status": "reading"
+  },
+  {
+    "id": 15,
+    "title": "Things Fall Apart",
+    "author": "Chinua Achebe",
+    "pages": 209,
+    "status": "reading"
+  },
+  {
+    "id": 16,
+    "title": "The Da Vinci Code",
+    "author": "Dan Brown",
+    "pages": 489,
+    "status": "reading"
+  },
+  {
+    "id": 17,
+    "title": "Beloved",
+    "author": "Toni Morrison",
+    "pages": 324,
+    "status": "reading"
+  },
+  {
+    "id": 18,
+    "title": "Angels & Demons",
+    "author": "Dan Brown",
+    "pages": 616,
+    "status": "reading"
+  },
+  {
+    "id": 19,
+    "title": "The Kite Runner",
+    "author": "Khaled Hosseini",
+    "pages": 371,
+    "status": "reading"
+  },
+  {
+    "id": 20,
+    "title": "Dracula",
+    "author": "Anonymous Retelling",
+    "pages": 309,
+    "status": "finished"
+  },
+  {
+    "id": 21,
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "pages": 412,
+    "status": "unread"
+  },
+  {
+    "id": 22,
+    "title": "The Way of Kings",
+    "author": "Brandon Sanderson",
+    "pages": 1007,
+    "status": "finished"
+  },
+  {
+    "id": 23,
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "pages": 311,
+    "status": "finished"
+  },
+  {
+    "id": 24,
+    "title": "Dracula",
+    "author": "Bram Stoker",
+    "pages": 240,
+    "status": "finished"
+  },
+  {
+    "id": 25,
+    "title": "Dracula",
+    "author": "Marcus Aldwyn",
+    "pages": 189,
+    "status": "finished"
+  },
+  {
+    "id": 26,
+    "title": "The Girl with the Dragon Tattoo",
+    "author": "Stieg Larsson",
+    "pages": 465,
+    "status": "unread"
+  },
+  {
+    "id": 27,
+    "title": "Slaughterhouse-Five",
+    "author": "Kurt Vonnegut",
+    "pages": 275,
+    "status": "finished"
+  },
+  {
+    "id": 28,
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "pages": 281,
+    "status": "reading"
+  },
+  {
+    "id": 29,
+    "title": "Circe",
+    "author": "Priya Sharma",
+    "pages": 541,
+    "status": "finished"
+  },
+  {
+    "id": 30,
+    "title": "Circe",
+    "author": "Rosie Hewlett",
+    "pages": 629,
+    "status": "finished"
+  },
+  {
+    "id": 31,
+    "title": "The Odyssey",
+    "author": "Robert Fagles",
+    "pages": 213,
+    "status": "reading"
+  },
+  {
+    "id": 32,
+    "title": "Circe",
+    "author": "Natalie Haynes",
+    "pages": 495,
+    "status": "finished"
+  },
+  {
+    "id": 33,
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "pages": 197,
+    "status": "finished"
+  },
+  {
+    "id": 34,
+    "title": "Hamlet",
+    "author": "John Marsden",
+    "pages": 199,
+    "status": "unread"
+  },
+  {
+    "id": 35,
+    "title": "Circe",
+    "author": "Jennifer Saint",
+    "pages": 348,
+    "status": "finished"
+  },
+  {
+    "id": 36,
+    "title": "Ready Player One",
+    "author": "Ernest Cline",
+    "pages": 374,
+    "status": "unread"
+  },
+  {
+    "id": 37,
+    "title": "Moby-Dick",
+    "author": "Herman Melville",
+    "pages": 635,
+    "status": "unread"
+  },
+  {
+    "id": 38,
+    "title": "Dracula",
+    "author": "Ivan Cardoso",
+    "pages": 211,
+    "status": "unread"
+  },
+  {
+    "id": 39,
+    "title": "Siddhartha",
+    "author": "Hermann Hesse",
+    "pages": 152,
+    "status": "unread"
+  },
+  {
+    "id": 40,
+    "title": "Hamlet",
+    "author": "William Shakespeare",
+    "pages": 657,
+    "status": "finished"
+  },
+  {
+    "id": 41,
+    "title": "Fahrenheit 451",
+    "author": "Ray Bradbury",
+    "pages": 194,
+    "status": "reading"
+  },
+  {
+    "id": 42,
+    "title": "The Name of the Wind",
+    "author": "Patrick Rothfuss",
+    "pages": 662,
+    "status": "unread"
+  },
+  {
+    "id": 43,
+    "title": "The Odyssey",
+    "author": "Samuel Butler",
+    "pages": 646,
+    "status": "unread"
+  },
+  {
+    "id": 44,
+    "title": "The Return of the King",
+    "author": "J.R.R. Tolkien",
+    "pages": 416,
+    "status": "unread"
+  },
+  {
+    "id": 45,
+    "title": "Frankenstein",
+    "author": "Peter Ackroyd",
+    "pages": 196,
+    "status": "reading"
+  },
+  {
+    "id": 46,
+    "title": "Hamlet",
+    "author": "David Hewson",
+    "pages": 172,
+    "status": "unread"
+  },
+  {
+    "id": 47,
+    "title": "One Hundred Years of Solitude",
+    "author": "Gabriel Garcia Marquez",
+    "pages": 417,
+    "status": "finished"
+  },
+  {
+    "id": 48,
+    "title": "Circe",
+    "author": "Madeline Miller",
+    "pages": 569,
+    "status": "reading"
+  },
+  {
+    "id": 49,
+    "title": "The Odyssey",
+    "author": "T.E. Lawrence",
+    "pages": 224,
+    "status": "unread"
+  },
+  {
+    "id": 50,
+    "title": "Snow Crash",
+    "author": "Neal Stephenson",
+    "pages": 470,
+    "status": "unread"
+  },
+  {
+    "id": 51,
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "pages": 279,
+    "status": "reading"
+  },
+  {
+    "id": 52,
+    "title": "Good Omens",
+    "author": "Neil Gaiman",
+    "pages": 288,
+    "status": "unread"
+  },
+  {
+    "id": 53,
+    "title": "The Color Purple",
+    "author": "Alice Walker",
+    "pages": 295,
+    "status": "finished"
+  },
+  {
+    "id": 54,
+    "title": "The Brothers Karamazov",
+    "author": "Fyodor Dostoevsky",
+    "pages": 824,
+    "status": "finished"
+  },
+  {
+    "id": 55,
+    "title": "Frankenstein",
+    "author": "Dean Koontz",
+    "pages": 326,
+    "status": "unread"
+  },
+  {
+    "id": 56,
+    "title": "Frankenstein",
+    "author": "Susan Heyboer O'Keefe",
+    "pages": 287,
+    "status": "reading"
+  },
+  {
+    "id": 57,
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "pages": 517,
+    "status": "reading"
+  },
+  {
+    "id": 58,
+    "title": "The Wind-Up Bird Chronicle",
+    "author": "Haruki Murakami",
+    "pages": 607,
+    "status": "finished"
+  },
+  {
+    "id": 59,
+    "title": "Hamlet",
+    "author": "A.J. Hartley",
+    "pages": 517,
+    "status": "reading"
+  },
+  {
+    "id": 60,
+    "title": "The Odyssey",
+    "author": "Emily Wilson",
+    "pages": 551,
+    "status": "unread"
+  },
+  {
+    "id": 61,
+    "title": "Hallo",
+    "author": "das ist ein test",
+    "pages": 67,
+    "status": "reading"
+  }
+]

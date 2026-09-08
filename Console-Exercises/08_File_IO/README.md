@@ -152,3 +152,42 @@ This folder contains exercises on reading and writing files.
   - Load and save inventory once at start
   - Display menu, validate input with try/except ValueError
   - Loop until program exit
+
+08_06_LibraryTracker (Capstone)
+* Set up file paths
+  - library.json (source of truth), export.csv (generated report), reading_log.txt (append-only action log)
+* Load/save library
+  - load_library(library) → read JSON, handle FileNotFoundError/JSONDecodeError, log load action, return loaded list
+  - save_library(library) → write JSON, log save action
+* Define get_next_id(library)
+  - Same max-id-plus-one pattern as inventory task
+* Define add_book(library, title, author, pages, status)
+  - for...else duplicate check (title + author match)
+  - Convert pages to int, catch ValueError
+  - Build book dict with id, append, save, log
+* Define update_status(library, title)
+  - Find book by title, confirm author with user (handles duplicate titles)
+  - Numbered menu for status selection (Reading/Finished/Not Started) instead of free text
+  - break after handling match, for...else prints "not found"
+  - Log status change
+* Define remove_book(library, title)
+  - Collect all title matches, show them, confirm correct book
+  - Select by id, require typing exact title to confirm deletion
+  - library.remove(book), save, log removal
+* Define search_book(library, title)
+  - Collect and print all title matches
+  - Log search action
+* Define show_stats(library)
+  - Total books, total pages via sum()
+  - Count books per status (Reading/Finished/Not Started) via manual loop
+  - Print full book list
+  - Log stats action
+* Define export_csv(library)
+  - Sort books by pages descending using sorted() with key=lambda
+  - Write to export.csv with csv.DictWriter, fixed fieldnames
+* Define handle_selection(selection)
+  - Routes menu choice 1-7 to add/update/remove/search/stats/export/exit
+* Main loop
+  - Load library once at start
+  - Display menu, validate input with try/except ValueError
+  - Loop until exit

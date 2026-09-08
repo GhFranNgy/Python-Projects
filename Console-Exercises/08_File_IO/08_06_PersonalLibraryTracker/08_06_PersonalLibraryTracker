@@ -2,6 +2,7 @@ import csv
 import json
 import os
 import sys
+from datetime import datetime
 
 library_path = os.path.join(os.path.dirname(__file__), "library.json")
 export_path = os.path.join(os.path.dirname(__file__), "export.csv")
@@ -20,6 +21,9 @@ def load_library(library):
     except json.JSONDecodeError:
         print("Missing or damaged file.")
         sys.exit()
+
+    with open(reading_log, "a") as f:
+        f.write(f"{datetime.now()}: Library loaded\n")
         
     return library
 
@@ -27,6 +31,9 @@ def save_library(library):
     print("Save Library...")
     with open(library_path, "w") as f:
         json.dump(library, f, indent=2)
+
+    with open(reading_log, "a") as f:
+        f.write(f"{datetime.now()}: Library saved\n")
 
 def get_next_id(library):
     if not library:
@@ -56,13 +63,31 @@ def add_book(library, title, author, pages, status):
         save_library(library)
         print(f"Book '{title}' by {author} added to library.")
 
+        with open(reading_log, "a") as f:
+            f.write(f"{datetime.now()}: Added '{title}' by {author}\n")
+
 def update_status(library, title):
     for book in library:
         if title == book["title"]:
             check_author = input(f"{title} by {book["author"]}? y/N\n")
             if check_author.lower() == "y":
-                status = input("Status: ")
+                try:
+                    status_id = input("(1) Reading\n(2) Finished\n(3) Not Started\nSelect new status: ")
+                    if status_id == "1":
+                        status = "Reading"
+                    elif status_id == "2":
+                        status = "Finished"
+                    elif status_id == "3":
+                        status = "Not Started"
+                    else:
+                        print("Invalid selection.")
+                        return
+                except ValueError:
+                    print("Please enter a whole number.")
+                    return
                 book["status"] = status
+                with open(reading_log, "a") as f:
+                    f.write(f"{datetime.now()}: Updated status of '{title}' to '{status}'\n")
             elif check_author.lower() == "n":
                 print("Wrong Book. Exiting...")
             else:
@@ -102,7 +127,6 @@ def remove_book(library, title):
                 library.remove(book)
                 save_library(library)
                 with open(reading_log, "a") as f:
-                    from datetime import datetime
                     f.write(f"{datetime.now()}: Removed '{book['title']}'\n")
                 print(f"Removed '{book['title']}'.")
             else:
@@ -112,11 +136,55 @@ def remove_book(library, title):
     print("No book found with that ID.")
     
 def search_book(library, title):
-    pass
+    matches = [book for book in library if book["title"] == title]
+    print(f"Found {len(matches)} matches for '{title}':")
+    for book in matches:
+        print(book)
+    with open(reading_log, "a") as f:
+        f.write(f"{datetime.now()}: Searched for '{title}'\n")
+
 def show_stats(library):
-    pass
+    reading = 0
+    finished = 0
+    not_started = 0
+
+    total_books = len(library)
+    total_pages = sum(book["pages"] for book in library)
+    print(f"Total books: {total_books}")
+    print(f"Total pages: {total_pages}")
+
+    for book in library:
+        if book["status"].lower() == "reading":
+            reading += 1
+        elif book["status"].lower() == "finished":
+            finished += 1
+        elif book["status"].lower() == "not started":
+            not_started += 1
+    print(f"Books in progress: {reading}")
+    print(f"Finished books: {finished}")
+    print(f"Books not started: {not_started}")
+
+    for book in library:
+        print(f"{book['title']} by {book['author']}, {book['pages']} pages, Status: {book['status']}")
+
+    with open(reading_log, "a") as f:
+        f.write(f"{datetime.now()}: Showed stats\n")
+
 def export_csv(library):
-    pass
+    if not library:
+        print("Library is empty. No data to export.")
+        return
+
+    sorted_books = sorted(library, key=lambda book: book["pages"], reverse=True)
+
+    with open(export_path, "w", newline="") as csvfile:
+        fieldnames = ["id", "title", "author", "pages", "status"]
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(sorted_books)
+
+    print(f"Exported {len(sorted_books)} books to {export_path}.")
+
 def handle_selection(selection):
 
     if selection == 1:
@@ -124,9 +192,8 @@ def handle_selection(selection):
         title = input("Title: ")
         author = input("Author: ")
         pages = input("Pages: ")
-        status = input("Status:")
 
-        add_book(library, title, author, pages, status)
+        add_book(library, title, author, pages, "Not Started")
 
     elif selection == 2:
         print("-----Update Status-----")
@@ -144,7 +211,7 @@ def handle_selection(selection):
         print("-----Search Book-----")
         title = input("Title: ")
 
-        remove_book(library, title)
+        search_book(library, title)
 
     elif selection == 5:
         print("-----Show Stats-----")
