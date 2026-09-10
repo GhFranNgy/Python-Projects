@@ -27,4 +27,23 @@ for i in range(5):
 cursor.executemany("""INSERT INTO books
     (title, author, pages, status) VALUES (?, ?, ?, ?)""", books)
 conn.commit()
+
+# 3. Select and print all books
+print("--- All books ---")
+cursor.execute("SELECT * FROM books")
+for row in cursor.fetchall():
+    print(row)
+
+# 4. Select and print books where status = 'reading'
+print("\n--- Currently reading ---")
+cursor.execute("SELECT * FROM books WHERE status = ?", ("reading",))
+for row in cursor.fetchall():
+    print(row)
+
+# 5. Select and print books sorted by pages descending
+print("\n--- Sorted by pages (descending) ---")
+cursor.execute("SELECT * FROM books ORDER BY pages DESC")
+for row in cursor.fetchall():
+    print(row)
+
 conn.close()
