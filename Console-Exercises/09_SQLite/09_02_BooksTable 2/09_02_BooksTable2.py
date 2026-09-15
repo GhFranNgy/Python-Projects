@@ -90,10 +90,10 @@ while True:
             "(5) Show Stats\n" \
             "(6) Exit\n"))
 
-        if selection in range(1,8):
+        if selection in range(1,7):
             handle_selection(selection)
         else:
-            print("Please enter a number in range of 1-7")
+            print("Please enter a number in range of 1-6")
 
     except(ValueError):
         print("Please enter a valid number")
