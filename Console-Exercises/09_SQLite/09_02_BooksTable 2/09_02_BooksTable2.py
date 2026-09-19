@@ -22,9 +22,15 @@ def add_book(title, author, pages, status):
     conn.commit()
 
 def update_status(id):
-    pass
+    # 2. Update status of book where id = id
+    new_status = input("Enter new status: ")
+    conn.execute("UPDATE books SET status = ? WHERE id = ?", (new_status, id))
+    conn.commit()
+    
 def remove_book(title):
-    pass
+    # 3. Delete book where title = title
+    conn.execute("DELETE FROM books WHERE title = ?", (title,))
+    conn.commit()
 
 def search_status(status):
     # 4. Select and print books where status = status
