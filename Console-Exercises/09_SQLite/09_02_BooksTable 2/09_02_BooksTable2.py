@@ -24,18 +24,31 @@ def add_book(title, author, pages, status):
 def update_status(id):
     # 2. Update status of book where id = id
     new_status = input("Enter new status: ")
-    conn.execute("UPDATE books SET status = ? WHERE id = ?", (new_status, id))
+    cur = conn.execute("UPDATE books SET status = ? WHERE id = ?", (new_status, id))
     conn.commit()
+    if cur.rowcount == 0:
+        print("No book with that ID.")
     
 def remove_book(title):
     # 3. Delete book where title = title
-    conn.execute("DELETE FROM books WHERE title = ?", (title,))
+    conn.execute("SELECT * FROM books WHERE title = ?", (title,))
+    matches = cursor.fetchall()
+    for row in matches:
+        print(row)
+    try:
+        selectID = int(input("Enter ID to delete"))
+    except ValueError:
+        print("Please enter a number")
+        return
+    cur = cursor.execute("DELETE FROM books WHERE id = ?", (selectID,))
     conn.commit()
+    if cur.rowcount == 0:
+        print("No book with that ID.")
 
 def search_status(status):
     # 4. Select and print books where status = status
     print("\n--- Books with status '{}' ---".format(status))
-    cursor.execute("SELECT * FROM books WHERE status = ?", (status,))
+    cursor.execute("SELECT * FROM books WHERE status = ? COLLATE NOCASE", (status,))
     for row in cursor.fetchall():
         print(row)
 
@@ -45,20 +58,37 @@ def show_stats():
     cursor.execute("SELECT * FROM books ORDER BY pages DESC")
     for row in cursor.fetchall():
         print(row)
+    
 
 def handle_selection(selection):
 
     if selection == 1:
+        print("-----Add Book-----")
+
+        title = input("Enter book title: ")
+        author = input("Enter book author: ")
+        while True:
+            try:
+                pages = int(input("Enter number of pages: "))
+                break
+            except ValueError:
+                print("Please enter a valid number")
+
         insert_book = {
-        "title": input("Enter book title: "),
-        "author": input("Enter book author: "),
-        "pages": int(input("Enter number of pages: ")),
+        "title": title,
+        "author": author,
+        "pages": pages,
         }
+
         add_book(insert_book["title"], insert_book["author"], insert_book["pages"], "Not Started")
 
     elif selection == 2:
         print("-----Update Status-----")
-        id = input("ID: ")
+        try:
+            id = int(input("ID: "))
+        except ValueError:
+            print("Please enter a number")
+            return
 
         update_status(id)
 
