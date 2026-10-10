@@ -133,3 +133,8 @@ while True:
 
     except(ValueError):
         print("Please enter a valid number")
+
+#TODO
+# Implement row_factory
+# Menu labels don’t match what the options do (“Show Stats” shows a sorted list, “Search Book” searches by status), and there’s no “Show All”.
+# Type-the-title confirmation before deleting.
