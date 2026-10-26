@@ -1,0 +1,173 @@
+import sqlite3
+import os
+import sys
+
+library_path = os.path.join(os.path.dirname(__file__), "library3.db")
+conn = sqlite3.connect(library_path)
+conn.row_factory = sqlite3.Row
+cursor = conn.cursor()
+
+cursor.execute("PRAGMA foreign_keys = ON")
+
+cursor.execute("""
+    CREATE TABLE IF NOT EXISTS authors (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL UNIQUE
+    )
+""")
+
+cursor.execute("""
+    CREATE TABLE IF NOT EXISTS books (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title TEXT NOT NULL,
+        author_id INTEGER NOT NULL,
+        pages INTEGER,
+        status TEXT,
+        FOREIGN KEY (author_id) REFERENCES authors(id)
+    )
+""")
+
+authors  = [
+    ("George Orwell",), 
+    ("Frank Herbert",), 
+    ("J.R.R. Tolkien",), 
+    ("Isaac Asimov",)
+]
+books = [
+    ("1984", 1, 328, "finished"),
+    ("Animal Farm", 1, 112, "reading"),
+    ("Dune", 2, 412, "unread"),
+    ("Dune Messiah", 2, 256, "unread"),
+    ("Brave New World", 2, 268, "finished"),
+    ("Fahrenheit 451", 3, 194, "reading"),
+    ("The Handmaid's Tale", 4, 311, "unread"),
+    ("Neuromancer", 4, 271, "finished"),
+]
+
+cursor.execute("SELECT 1 FROM authors LIMIT 1")
+if cursor.fetchone() is None:
+    # executemany
+    cursor.executemany("INSERT INTO authors (name) VALUES (?)", authors)
+    # OR for loop
+    #for name in authors:
+    #    cursor.execute("INSERT INTO authors (name) VALUES (?)", name)
+    cursor.executemany("INSERT INTO books (title, author_id, pages, status) VALUES (?, ?, ?, ?)", books)
+    conn.commit()
+
+def print_book(book):
+    print(f"[{book['book_id']}] {book['title']} by {book['author_id']} - {book['pages']} pages ({book['status']})")
+    
+def add_book(title, author_name, pages, status):
+    cursor.execute("SELECT id FROM authors WHERE name = ?", (author_name,))
+    author = cursor.fetchone()
+
+    if author is None:
+        cursor.execute("INSERT INTO authors (name) VALUES (?)", (author_name,))
+        author_id = cursor.lastrowid
+    else:
+        author_id = author["id"]
+
+    cursor.execute(
+        "INSERT INTO books (title, author_id, pages, status) VALUES (?, ?, ?, ?)",
+        (title, author_id, pages, status)
+    )
+    book_id = cursor.lastrowid
+    conn.commit()
+
+    book = {
+        "book_id": book_id,
+        "title": title,
+        "author_id": author_id,
+        "pages": pages,
+        "status": status
+    }
+
+    print("Book added:")
+    print_book(book)
+
+def update_status(id):
+    pass
+
+def remove_book(title):
+    pass
+
+def search_book(search):
+    pass
+
+def show_all():
+    pass
+
+# Management
+def handle_selection(selection):
+
+    if selection == 1:
+        print("-----Add Book-----")
+
+        title = input("Enter book title: ")
+        author = input("Enter book author: ")
+        while True:
+            try:
+                pages = int(input("Enter number of pages: "))
+                break
+            except ValueError:
+                print("Please enter a valid number")
+
+        insert_book = {
+            "title": title,
+            "author": author,
+            "pages": pages,
+        }
+
+        add_book(insert_book["title"], insert_book["author"], insert_book["pages"], "Not Started")
+
+    elif selection == 2:
+        print("-----Update Status-----")
+        try:
+            book_id = int(input("ID: "))
+        except ValueError:
+            print("Please enter a number")
+            return
+
+        update_status(book_id)
+
+    elif selection == 3:
+        print("-----Remove Book-----")
+        title = input("Title: ")
+
+        remove_book(title)
+
+    elif selection == 4:
+        print("-----Search Book-----")
+        book = input("Search book by Title/author/status: ")
+
+        search_book(book)
+
+    elif selection == 5:
+        print("-----Show All-----")
+        show_all()
+
+    elif selection == 6:
+        print("-----Exit-----")
+        conn.close()
+        sys.exit()
+
+    else:
+        print("Invalid selection")
+
+while True:
+    try:
+        selection = int(input("-----Select action-----\n"
+                              "(1) Add Book\n"
+                              "(2) Update Status\n"
+                              "(3) Remove Book\n"
+                              "(4) Search Book\n"
+                              "(5) Show All\n"
+                              "(6) Exit\n"))
+
+        if selection in range(1, 7):
+            handle_selection(selection)
+        else:
+            print("Please enter a number in range of 1-6")
+
+    except ValueError:
+        print("Please enter a valid number")
