@@ -85,17 +85,40 @@ def add_book(title, author_name, pages, status):
     print("Book added:")
     print_book(book)
 
-def update_status(id):
-    pass
+def total_books_perAuthor():
+    cursor.execute("""
+        SELECT authors.name, COUNT(books.id)
+        FROM authors
+        LEFT JOIN books ON books.author_id = authors.id
+        GROUP BY authors.id
+    """)
+    rows = cursor.fetchall()
 
-def remove_book(title):
-    pass
+    if not rows:
+        print("No books yet")
+        return
+    for row in rows:
+        print_book(row)
 
-def search_book(search):
+def total_pages_perAuthor():
     pass
 
 def show_all():
-    pass
+    cursor.execute("""
+        SELECT books.id AS book_id, books.title, authors.name AS author_name,
+               books.pages, books.status
+        FROM books
+        JOIN authors ON books.author_id = authors.id
+        ORDER BY books.title
+    """)
+    rows = cursor.fetchall()
+
+    if not rows:
+        print("No books yet")
+        return
+    for row in rows:
+        print_book(row)
+    
 
 # Management
 def handle_selection(selection):
@@ -121,32 +144,18 @@ def handle_selection(selection):
         add_book(insert_book["title"], insert_book["author"], insert_book["pages"], "Not Started")
 
     elif selection == 2:
-        print("-----Update Status-----")
-        try:
-            book_id = int(input("ID: "))
-        except ValueError:
-            print("Please enter a number")
-            return
-
-        update_status(book_id)
+        print("-----Total Books per Author-----")
+        total_books_perAuthor()
 
     elif selection == 3:
-        print("-----Remove Book-----")
-        title = input("Title: ")
-
-        remove_book(title)
+        print("-----Total Pages per Author-----")
+        total_pages_perAuthor()
 
     elif selection == 4:
-        print("-----Search Book-----")
-        book = input("Search book by Title/author/status: ")
-
-        search_book(book)
-
-    elif selection == 5:
-        print("-----Show All-----")
+        print("-----Show all Books-----")
         show_all()
 
-    elif selection == 6:
+    elif selection == 5:
         print("-----Exit-----")
         conn.close()
         sys.exit()
@@ -158,16 +167,15 @@ while True:
     try:
         selection = int(input("-----Select action-----\n"
                               "(1) Add Book\n"
-                              "(2) Update Status\n"
-                              "(3) Remove Book\n"
-                              "(4) Search Book\n"
-                              "(5) Show All\n"
-                              "(6) Exit\n"))
+                              "(2) Total books per Author\n"
+                              "(3) Total pages per Author\n"
+                              "(4) Show All\n"
+                              "(5) Exit\n"))
 
-        if selection in range(1, 7):
+        if selection in range(1, 6):
             handle_selection(selection)
         else:
-            print("Please enter a number in range of 1-6")
+            print("Please enter a number in range of 1-5")
 
     except ValueError:
         print("Please enter a valid number")
