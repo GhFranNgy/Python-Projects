@@ -57,6 +57,9 @@ if cursor.fetchone() is None:
 def print_book(book):
     print(f"[{book['book_id']}] {book['title']} by {book['author_id']} - {book['pages']} pages ({book['status']})")
     
+def print_total_pages(row):
+    print(f"{row['name']} - {row['pages']} pages")
+    
 def add_book(title, author_name, pages, status):
     cursor.execute("SELECT id FROM authors WHERE name = ?", (author_name,))
     author = cursor.fetchone()
@@ -101,7 +104,20 @@ def total_books_perAuthor():
         print_book(row)
 
 def total_pages_perAuthor():
-    pass
+    cursor.execute("""
+        SELECT authors.name, SUM(books.pages) AS total_pages
+        FROM books
+        JOIN authors ON books.author_id = authors.id
+        GROUP BY authors.id
+        ORDER BY total_pages DESC
+    """)
+    rows = cursor.fetchall()
+
+    if not rows:
+        print("No books yet")
+        return
+    for row in rows:
+        print_book(row)
 
 def show_all():
     cursor.execute("""
@@ -117,7 +133,7 @@ def show_all():
         print("No books yet")
         return
     for row in rows:
-        print_book(row)
+        print_total_pages(row)
     
 
 # Management
