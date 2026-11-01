@@ -56,10 +56,10 @@ if cursor.fetchone() is None:
     conn.commit()
 
 def print_book(book):
-    print(f"[{book['book_id']}] {book['title']} by {book['author_id']} - {book['pages']} pages ({book['status']})")
+    print(f"[{book['book_id']}] {book['title']} by {book['author_name']} - {book['pages']} pages ({book['status']})")
 
 def print_total_books(row):
-    print(f"[{row['name']} - {row['total_books']} books")
+    print(f"{row['name']} - {row['total_books']} books")
     
 def print_total_pages(row):
     print(f"{row['name']} - {row['total_pages']} pages")
@@ -84,7 +84,7 @@ def add_book(title, author_name, pages, status):
     book = {
         "book_id": book_id,
         "title": title,
-        "author_id": author_id,
+        "author_name": author_name,
         "pages": pages,
         "status": status
     }
