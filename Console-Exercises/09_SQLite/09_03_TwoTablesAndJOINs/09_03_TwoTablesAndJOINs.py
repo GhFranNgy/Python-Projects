@@ -27,21 +27,22 @@ cursor.execute("""
     )
 """)
 
-authors  = [
-    ("George Orwell",), 
-    ("Frank Herbert",), 
-    ("J.R.R. Tolkien",), 
-    ("Isaac Asimov",)
+authors = [
+    ("George Orwell",),
+    ("Frank Herbert",),
+    ("J.R.R. Tolkien",),
+    ("Isaac Asimov",),
+    ("Ursula K. Le Guin",),
 ]
 books = [
     ("1984", 1, 328, "finished"),
     ("Animal Farm", 1, 112, "reading"),
     ("Dune", 2, 412, "unread"),
     ("Dune Messiah", 2, 256, "unread"),
-    ("Brave New World", 2, 268, "finished"),
-    ("Fahrenheit 451", 3, 194, "reading"),
-    ("The Handmaid's Tale", 4, 311, "unread"),
-    ("Neuromancer", 4, 271, "finished"),
+    ("Children of Dune", 2, 444, "unread"),
+    ("The Hobbit", 3, 310, "finished"),
+    ("Foundation", 4, 255, "unread"),
+    ("I, Robot", 4, 253, "finished"),
 ]
 
 cursor.execute("SELECT 1 FROM authors LIMIT 1")
@@ -56,9 +57,12 @@ if cursor.fetchone() is None:
 
 def print_book(book):
     print(f"[{book['book_id']}] {book['title']} by {book['author_id']} - {book['pages']} pages ({book['status']})")
+
+def print_total_books(row):
+    print(f"[{row['name']} - {row['total_books']} books")
     
 def print_total_pages(row):
-    print(f"{row['name']} - {row['pages']} pages")
+    print(f"{row['name']} - {row['total_pages']} pages")
     
 def add_book(title, author_name, pages, status):
     cursor.execute("SELECT id FROM authors WHERE name = ?", (author_name,))
@@ -90,7 +94,7 @@ def add_book(title, author_name, pages, status):
 
 def total_books_perAuthor():
     cursor.execute("""
-        SELECT authors.name, COUNT(books.id)
+        SELECT authors.name, COUNT(books.id) AS total_books
         FROM authors
         LEFT JOIN books ON books.author_id = authors.id
         GROUP BY authors.id
@@ -101,7 +105,7 @@ def total_books_perAuthor():
         print("No books yet")
         return
     for row in rows:
-        print_book(row)
+        print_total_books(row)
 
 def total_pages_perAuthor():
     cursor.execute("""
@@ -117,7 +121,7 @@ def total_pages_perAuthor():
         print("No books yet")
         return
     for row in rows:
-        print_book(row)
+        print_total_pages(row)
 
 def show_all():
     cursor.execute("""
@@ -133,7 +137,7 @@ def show_all():
         print("No books yet")
         return
     for row in rows:
-        print_total_pages(row)
+        print_book(row)
     
 
 # Management
